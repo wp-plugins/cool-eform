@@ -1,0 +1,175 @@
+# Copyright (C) 2015 CoolPages
+# This file is distributed under the GPL2.
+msgid ""
+msgstr ""
+"Project-Id-Version: Cool eForm 0.1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/cool-eform\n"
+"POT-Creation-Date: 2015-04-20 16:14:11+00:00\n"
+"PO-Revision-Date: 2015-04-20 18:15+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: cool-eform.php:118
+msgid ""
+"The \"From\" value did not appear to be a valid email address. Please enter "
+"a valid email address."
+msgstr ""
+"Hodnota pole \"Odesilatel\" není platná emailová adresa. Zadejte prosím "
+"platnou emailovou adresu."
+
+#: cool-eform.php:129
+msgid ""
+"The \"To\" value did not appear to be a valid email address. Please enter a "
+"valid email address."
+msgstr ""
+"Hodnota pole \"Příjemce\" není platná emailova adresa. Zadejte prosím "
+"platnou emailovou adresu."
+
+#: cool-eform.php:140
+msgid "The \"Subject\" value is required."
+msgstr "Pole \"Předmět\" je povinné."
+
+#: cool-eform.php:159 cool-eform.php:160
+msgid "eForm"
+msgstr "eForm"
+
+#: cool-eform.php:172
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Nemáte dostatečná oprávnění pro přístup na tuto stránku."
+
+#: cool-eform.php:193
+msgid "The form is invalid. Please try again."
+msgstr "Formulář je neplatný. Prosím zkuste to znovu."
+
+#: cool-eform.php:217
+msgid "An error has occured while sending the form."
+msgstr "Při odesílání formuláře došlo k chybě."
+
+#: cool-eform.php:218
+msgid "Please try it later or send the message directly to %s."
+msgstr "Prosím zkuste to později nebo odešlete zprávu přímo na %s."
+
+#: cool-eform.php:237 templates/form.php:112
+msgid "This field is required."
+msgstr "Toto pole je povinné."
+
+#: cool-eform.php:244 templates/form.php:113
+msgid "Please enter a valid email address."
+msgstr "Zadejte prosím platnou emailovou adresu."
+
+#: cool-eform.php:252
+msgid "Please enter the correct value."
+msgstr "Zadejte prosím správnou hodnotu."
+
+#: cool-eform.php:271 templates/form.php:14 templates/settings.php:47
+msgid "Name"
+msgstr "Jméno"
+
+#: cool-eform.php:274 templates/form.php:28 templates/settings.php:56
+msgid "Email"
+msgstr "Email"
+
+#: cool-eform.php:277 templates/form.php:42 templates/settings.php:65
+msgid "Phone"
+msgstr "Telefon"
+
+#: cool-eform.php:280 templates/form.php:70 templates/settings.php:82
+msgid "Message"
+msgstr "Zpráva"
+
+#: templates/form.php:56 templates/settings.php:27 templates/settings.php:74
+msgid "Subject"
+msgstr "Předmět"
+
+#: templates/form.php:102
+msgid "Send"
+msgstr "Odeslat"
+
+#: templates/settings.php:2
+msgid "eForm Settings"
+msgstr "Nastavení pro eForm"
+
+#: templates/settings.php:6
+msgid "General"
+msgstr "Obecné"
+
+#: templates/settings.php:7
+msgid ""
+"The settings listed below determine the address to send the email to or the "
+"default subject of the email."
+msgstr ""
+"Nastavení uvedené níže určují adresu, na kterou se má odeslat email nebo "
+"defaultní předmět emailu."
+
+#: templates/settings.php:13
+msgid "From"
+msgstr "Odesilatel"
+
+#: templates/settings.php:16
+msgid "Email will appear to be from this email address."
+msgstr "Email se bude jevit jako příchozí z této adresy."
+
+#: templates/settings.php:20
+msgid "To"
+msgstr "Příjemce"
+
+#: templates/settings.php:23
+msgid "Email will be send to this email address."
+msgstr "Email bude odeslán na tuto adresu."
+
+#: templates/settings.php:30
+msgid ""
+"If the subject field is not selected or is empty, the email will have this "
+"subject."
+msgstr ""
+"Pokud není pole předmět vybráno nebo je jeho hodnota prázdná, email bude mít "
+"tento předmět."
+
+#: templates/settings.php:35 templates/settings.php:42
+msgid "Fields"
+msgstr "Pole"
+
+#: templates/settings.php:36
+msgid "The list of available fields for the form."
+msgstr "Seznam polí použitelných na formuláři."
+
+#: templates/settings.php:43
+msgid "Used"
+msgstr "Vybraný"
+
+#: templates/settings.php:44
+msgid "Mandatory"
+msgstr "Povinný"
+
+#: templates/settings.php:93
+msgid "Anti Spam"
+msgstr "Anti-spam"
+
+#. Plugin Name of the plugin/theme
+msgid "Cool eForm"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://bitbucket.org/coolpages/cool-eform"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Easy-to-use contact form sending data to email."
+msgstr "Snadno použitelný kontaktní formulář posílající data na email."
+
+#. Author of the plugin/theme
+msgid "CoolPages"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.coolpages.cz"
+msgstr ""
+
+#~ msgid "The field is required."
+#~ msgstr "Toto pole je povinné."
