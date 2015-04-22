@@ -1,0 +1,122 @@
+#cool-eform {
+    margin: 0 15%;
+}
+
+#cool-eform * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#cool-eform header {
+    margin: 0 0 20px 0;
+}
+
+#cool-eform header div {
+    font-size: 90%;
+    color: #999;
+    text-align: center;
+}
+
+#cool-eform header h2 {
+    margin: 0 0 5px 0;
+    text-align: center;
+}
+
+#cool-eform > p {
+    text-align: center;
+}
+
+#cool-eform > div {
+    clear: both;
+    overflow: hidden;
+    padding: 1px;
+    margin: 0 0 10px 0;
+}
+
+#cool-eform > div > fieldset > div > div {
+    margin: 0 0 5px 0;
+}
+
+#cool-eform > div > label, legend {
+    width: 25%;
+    float: left;
+    padding-right: 10px;
+    text-align: right;
+    font-weight: bold;
+}
+
+#cool-eform > div > div, #cool-eform > div > fieldset > div {
+    width: 75%;
+    float: right;
+}
+
+#cool-eform > div > fieldset label {
+    font-size: 90%;
+}
+
+#cool-eform fieldset {
+    border: 0;
+    padding: 0;
+}
+
+#cool-eform input[type=text],
+#cool-eform input[type=email],
+#cool-eform input[type=url],
+#cool-eform input[type=password],
+#cool-eform textarea {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+#cool-eform input[type=text],
+#cool-eform input[type=email],
+#cool-eform input[type=url],
+#cool-eform input[type=password] {
+    width: 50%;
+}
+
+#cool-eform input[type=text]:focus,
+#cool-eform input[type=email]:focus,
+#cool-eform input[type=url]:focus,
+#cool-eform input[type=password]:focus,
+#cool-eform textarea:focus {
+    outline: 0;
+    border-color: #4697e4;
+}
+
+#cool-eform .error {
+    margin-top: 10px;
+    color: red;
+}
+
+@media (max-width: 600px) {
+
+    #cool-eform > div {
+        margin: 0 0 15px 0;
+    }
+
+    #cool-eform > div > label, legend {
+        width: 100%;
+        float: none;
+        margin: 0 0 5px 0;
+        text-align: left;
+    }
+
+    #cool-eform > div > div, #cool-eform > div > fieldset > div {
+        width: 100%;
+        float: none;
+    }
+
+    #cool-eform input[type=text],
+    #cool-eform input[type=email],
+    #cool-eform input[type=url],
+    #cool-eform input[type=password],
+    #cool-eform textarea,
+    #cool-eform select {
+        width: 100%;
+    }
+}
