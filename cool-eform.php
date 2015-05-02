@@ -3,7 +3,7 @@
  * Plugin Name: Cool eForm
  * Plugin URI: https://bitbucket.org/coolpages/cool-eform
  * Description: Easy-to-use contact form sending data to email.
- * Version: 0.1.0
+ * Version: 0.1.1
  * Author: CoolPages
  * Author URI: http://www.coolpages.cz
  * Text Domain: cef
@@ -15,6 +15,8 @@
 if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
+
+define( 'WPCEF_PLUGIN_VERSION', '0.1.1' );
 
 define( 'WPCEF_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
@@ -34,7 +36,7 @@ if ( !class_exists( 'WP_Cool_EForm' ) ) {
          * Construct the plugin object.
          */
         public function __construct() {
-            add_action( 'plugins_loaded', array( &$this, 'load_textdomain' ) );
+            add_action( 'init', array( &$this, 'load_textdomain' ) );
             add_action( 'init', array( &$this, 'process_form' ) );
             add_action( 'wp_enqueue_scripts', array( &$this, 'add_styles_and_js' ) );
             add_action( 'admin_menu', array( &$this, 'add_admin_menu' ) );
@@ -76,6 +78,14 @@ if ( !class_exists( 'WP_Cool_EForm' ) ) {
          * Load plugin textdomain.
          */
         public function load_textdomain() {
+            $locale = get_locale();
+
+            $locale = apply_filters( 'plugin_locale', $locale, 'cef' );
+
+            // Look in the WordPress languages directory for translations first
+            // No need for the user to attach to any hooks in the code, and no problems during a plugin update
+            load_textdomain( 'cef', WP_LANG_DIR . '/cool-eform/cef-' . $locale . '.mo' );
+
             load_plugin_textdomain( 'cef', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
         }
 
@@ -83,7 +93,7 @@ if ( !class_exists( 'WP_Cool_EForm' ) ) {
          * Add required CSS styles and JavaScript files.
          */
         public function add_styles_and_js() {
-            wp_enqueue_style( 'cool-eform', plugins_url( 'css/cool-eform.css', __FILE__ ) );
+            wp_enqueue_style( 'cool-eform', plugins_url( 'css/cool-eform.css', __FILE__ ), array(), WPCEF_PLUGIN_VERSION );
             wp_enqueue_script( 'jquery-validation', plugins_url( 'js/jquery.validate.min.js', __FILE__ ), array( 'jquery' ), '1.13.1' );
         }
 

@@ -5,7 +5,7 @@ Author URI: http://wwww.coolpages.cz
 Plugin URI: https://bitbucket.org/coolpages/cool-eform
 Requires at least: 3.0
 Tested up to: 4.1.1
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,7 +49,7 @@ Follow the below steps to install the Cool eForm plugin and get it working.
 1. Upload `cool-eform` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Navigate to 'Settings' menu in Wordpress and select 'eForm' to setup the plugin
-1. Place `<?php $wp_cool_eform->render_form(); ?>` in templates of your choice
+1. Place `<?php if ( isset( $wp_cool_eform ) ) $wp_cool_eform->render_form(); ?>` in templates of your choice
 
 == Screenshots ==
 
@@ -59,5 +59,9 @@ Follow the below steps to install the Cool eForm plugin and get it working.
 
 == Changelog ==
 
+= 0.1.1 =
+* Fixed issue with loading the plugin text domain
+* Added more specific CSS classes to the form fields
+
 = 0.1.0 =
-* Initial official release.
+* Initial official release
