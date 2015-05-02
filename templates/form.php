@@ -28,7 +28,7 @@
                 <?php _e( 'Email', 'cef' ) ?> <sup><?php cef_required( $fields, 'email' ) ?></sup>
             </label>
             <div>
-                <input id="cef-email" name="cef-email" type="email" class="field text" value="<?php echo cef_get_param_value( 'cef-email' ) ?>" <?php cef_required( $fields, 'email', 'required' ) ?>>
+                <input id="cef-email" name="cef-email" type="email" class="field email" value="<?php echo cef_get_param_value( 'cef-email' ) ?>" <?php cef_required( $fields, 'email', 'required' ) ?>>
                 <?php if ( isset( $this->errors['email'] ) ): ?>
                     <div id="cef-email-error" class="error"><?php echo $this->errors['email'] ?></div>
                 <?php endif; ?>
@@ -42,7 +42,7 @@
                 <?php _e( 'Phone', 'cef' ) ?> <sup><?php cef_required( $fields, 'phone' ) ?></sup>
             </label>
             <div>
-                <input id="cef-phone" name="cef-phone" type="text" class="field text" value="<?php echo cef_get_param_value( 'cef-phone' ) ?>" <?php cef_required( $fields, 'phone', 'required' ) ?>>
+                <input id="cef-phone" name="cef-phone" type="text" class="field phone" value="<?php echo cef_get_param_value( 'cef-phone' ) ?>" <?php cef_required( $fields, 'phone', 'required' ) ?>>
                 <?php if ( isset( $this->errors['phone'] ) ): ?>
                     <div id="cef-phone-error" class="error"><?php echo $this->errors['phone'] ?></div>
                 <?php endif; ?>
@@ -89,7 +89,7 @@
             </label>
             <div>
                 <input id="cef-antispam-expected" name="cef-antispam-expected" type="hidden" class="field text" value="<?php echo $num1 + $num2 ?>">
-                <input id="cef-antispam" name="cef-antispam" type="text" class="field text" value="<?php echo cef_get_param_value( 'cef-antispam' ) ?>" <?php cef_required( $fields, 'antispam', 'required' ) ?>>
+                <input id="cef-antispam" name="cef-antispam" type="text" class="field antispam" value="<?php echo cef_get_param_value( 'cef-antispam' ) ?>" <?php cef_required( $fields, 'antispam', 'required' ) ?>>
                 <?php if ( isset( $this->errors['antispam'] ) ): ?>
                     <div id="cef-antispam-error" class="error"><?php echo $this->errors['antispam'] ?></div>
                 <?php endif; ?>
