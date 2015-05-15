@@ -3,7 +3,7 @@
  * Plugin Name: Cool eForm
  * Plugin URI: https://bitbucket.org/coolpages/cool-eform
  * Description: Easy-to-use contact form sending data to email.
- * Version: 0.1.1
+ * Version: 0.2.0
  * Author: CoolPages
  * Author URI: http://www.coolpages.cz
  * Text Domain: cef
@@ -16,7 +16,7 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'WPCEF_PLUGIN_VERSION', '0.1.1' );
+define( 'WPCEF_PLUGIN_VERSION', '0.2.0' );
 
 define( 'WPCEF_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
@@ -118,6 +118,8 @@ if ( !class_exists( 'WP_Cool_EForm' ) ) {
         public function sanitize_general_settings( $settings ) {
             $valid = get_option( WPCEF_SETTINGS_GENERAL );
 
+            $valid['from_name'] = trim( $settings['from_name'] );
+
             $from_address = trim( $settings['from_address'] );
             if ( is_email( $from_address ) ) {
                 $valid['from_address'] = $from_address;
@@ -125,7 +127,7 @@ if ( !class_exists( 'WP_Cool_EForm' ) ) {
                 add_settings_error(
                     'general-settings-error',
                     'invalid-from-address',
-                    __( 'The "From" value did not appear to be a valid email address. Please enter a valid email address.', 'cef' )
+                    __( 'The "From" Address value did not appear to be a valid email address. Please enter a valid email address.', 'cef' )
                 );
             }
 
@@ -136,7 +138,7 @@ if ( !class_exists( 'WP_Cool_EForm' ) ) {
                 add_settings_error(
                     'general-settings-error',
                     'invalid-to-address',
-                    __( 'The "To" value did not appear to be a valid email address. Please enter a valid email address.', 'cef' )
+                    __( 'The "To" Address value did not appear to be a valid email address. Please enter a valid email address.', 'cef' )
                 );
             }
 
@@ -147,7 +149,7 @@ if ( !class_exists( 'WP_Cool_EForm' ) ) {
                 add_settings_error(
                     'general-settings-error',
                     'invalid-subject',
-                    __( 'The "Subject" value is required.', 'cef' )
+                    __( 'The Subject value is required.', 'cef' )
                 );
             }
 
@@ -212,12 +214,13 @@ if ( !class_exists( 'WP_Cool_EForm' ) ) {
 
                 $general_settings = get_option( WPCEF_SETTINGS_GENERAL );
 
+                $from_name = $this->get_from_name( $general_settings['from_name'] );
                 $from_address = $general_settings['from_address'];
                 $to_address = $general_settings['to_address'];
                 $subject = $this->get_subject( $_POST, $general_settings['subject'] );
                 $content = $this->get_content( $_POST );
 
-                $headers[] = 'From: ' . $from_address;
+                $headers[] = "From: {$from_name} <{$from_address}>";
                 $headers[] = 'Content-Type: text/html; charset=UTF-8';
 
                 $sent = wp_mail( $to_address, $subject, $content, $headers );
@@ -268,6 +271,10 @@ if ( !class_exists( 'WP_Cool_EForm' ) ) {
             }
         }
 
+        private function get_from_name( $from_name ) {
+            return empty( $from_name ) ? 'eForm' : $from_name;
+        }
+
         private function get_subject( $values, $default_subject ) {
             $subject = isset( $values['cef-subject'] ) ? trim( $values['cef-subject'] ) : '';
             if ( empty( $subject ) ) {
@@ -294,7 +301,7 @@ if ( !class_exists( 'WP_Cool_EForm' ) ) {
         }
 
         private function format_line( $label, $value ) {
-            return PHP_EOL . PHP_EOL . $label . ': ' . $value;
+            return PHP_EOL . "<br><br><strong>{$label}:<strong> {$value}";
         }
     }
 

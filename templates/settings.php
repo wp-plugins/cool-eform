@@ -10,14 +10,21 @@
 
         <table class="form-table">
             <tr>
-                <th scope="row"><label for="from_address"><?php _e( 'From', 'cef' ) ?></label></th>
+                <th scope="row"><label for="from_name"><?php _e( '"From" Name', 'cef' ) ?></label></th>
+                <td>
+                    <input id="from_name" name="cef_general[from_name]" type="text" class="regular-text" value="<?php echo $general['from_name']; ?>">
+                    <p class="description"><?php _e( 'Email will appear to be from this name.', 'cef' ); ?></p>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="from_address"><?php _e( '"From" Address', 'cef' ) ?></label></th>
                 <td>
                     <input id="from_address" name="cef_general[from_address]" type="text" class="regular-text" value="<?php echo $general['from_address']; ?>">
                     <p class="description"><?php _e( 'Email will appear to be from this email address.', 'cef' ); ?></p>
                 </td>
             </tr>
             <tr>
-                <th scope="row"><label for="to_address"><?php _e( 'To', 'cef' ) ?></label></th>
+                <th scope="row"><label for="to_address"><?php _e( '"To" Address', 'cef' ) ?></label></th>
                 <td>
                     <input id="to_address" name="cef_general[to_address]" type="text" class="regular-text" value="<?php echo $general['to_address']; ?>">
                     <p class="description"><?php _e( 'Email will be send to this email address.', 'cef' ); ?></p>
