@@ -5,7 +5,7 @@ Author URI: http://wwww.coolpages.cz
 Plugin URI: https://bitbucket.org/coolpages/cool-eform
 Requires at least: 3.0
 Tested up to: 4.2.2
-Stable tag: 0.2.0
+Stable tag: 0.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,9 @@ Follow the below steps to install the Cool eForm plugin and get it working.
 2. The contact form.
 
 == Changelog ==
+
+= 0.2.1 =
+* Fixed missing end HTML tag in email content
 
 = 0.2.0 =
 * Added sender name setting

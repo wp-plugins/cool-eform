@@ -3,7 +3,7 @@
  * Plugin Name: Cool eForm
  * Plugin URI: https://bitbucket.org/coolpages/cool-eform
  * Description: Easy-to-use contact form sending data to email.
- * Version: 0.2.0
+ * Version: 0.2.1
  * Author: CoolPages
  * Author URI: http://www.coolpages.cz
  * Text Domain: cef
@@ -16,7 +16,7 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'WPCEF_PLUGIN_VERSION', '0.2.0' );
+define( 'WPCEF_PLUGIN_VERSION', '0.2.1' );
 
 define( 'WPCEF_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
@@ -301,7 +301,7 @@ if ( !class_exists( 'WP_Cool_EForm' ) ) {
         }
 
         private function format_line( $label, $value ) {
-            return PHP_EOL . "<br><br><strong>{$label}:<strong> {$value}";
+            return PHP_EOL . "<br><br><strong>{$label}:</strong> {$value}";
         }
     }
 
